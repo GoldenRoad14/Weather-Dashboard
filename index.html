@@ -6,35 +6,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./assets/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Lobster&family=Oxanium&family=Varela&display=swap" rel="stylesheet">
+
   <title>Weather Dashboard</title>
 </head>
 
+<!-- don't forget to add alt text-->
+
 <body>
-    <header class="head">
-        <h1 class="page-title">Weather Dashboard</h1>
-    </header>
+    <!-- <div class="container-fluid"> -->
+        <header>
+                <div class="header">
+                    <h1 class="page-title">Weather Dashboard</h1>
+                </div>
+        </header>
+    <div class="main-content">
+        <aside class="sidebar">
+            <span class="side-nav">
+                <div id="search-container">
+                    <h3 class="search-header">Enter a city</h3>
+                    <form id="weather-search">
+                        <label class="form-label" for="city"></label>
+                        <input name="city" id="city" type="text" autofocus="true">
+                        <button type="submit" class="btn-city-search">Search</button>
+                    </form>
+                </div>
+                <div id="saved-cities">
+                    <h3>Previously Viewed</h3>
+                </div>
+            </span>
+        </aside>
 
-    <main>
-        <div class="input-box">
-            <h3 class="search-header">Enter a city</h3>
-            <form id="weather-search">
-                <label class="form-label" for="city">City</label>
-                <input name="city" id="city" type="text" autofocus="true">
-                <button type="submit" class="btn-city-search">search</button>
-            </form>
-        </div>
-
-        <section id="saved-cities">
-            <h3>Previously Viewed</h3>
-        </section>
-        <section id="display-weather">
-            <div id="current-conditions"><h2>Current Weather</h2></div>
-            <div id="five-day-forecast"><h2>Five Day Forecast</h2></div>
-        </section>
-    </main>
-
+        <main>
+            <div class="main-content">
+                <div id="display-weather">
+                    <div id="current-conditions">
+                        <h2 id="current-weather-header">Current Weather</h2>
+                        <h4 id="city-date"></h4>
+                        <span id="forecastIcon"></span>
+                        <h3 id="city-name"></h3>
+                        <h4 id="city-temp"></h5>
+                        <h4 id="city-wind"></h5>
+                        <h4 id="city-humidity"></h5>
+                    </div>
+                    <div id="five-day-forecast"><h2>Five Day Forecast</h2>
+                        <div class="five-day-card" id="day-1"></div>
+                        <div class="five-day-card" id="day-2"></div>
+                        <div class="five-day-card" id="day-3"></div>
+                        <div class="five-day-card" id="day-4"></div>
+                        <div class="five-day-card" id="day-5"></div>
+                    </div>
+                </div>
+            </div>  
+        </main>
+    </div><!-- </div> -->
+    
     <script src="./assets/script.js"></script>
 
 </body>
